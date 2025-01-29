@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="\static\css\dashboard.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Admin Menu</h2>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" href="/welcome_admin">
+                    <i class="fas fa-paper-plane"></i> Inquiries
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="/dashboard">
+                    <i class="fas fa-chart-line"></i> Insights
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/view_users">
+                    <i class="fas fa-users"></i> View Users
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin_logout">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="container">
+            <div class="header">
+                <h1>Charts Overview</h1>
+            </div>
+            <div class="row">
+                <!-- Add your dashboard cards here -->
+                <div class="col-md-6">
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Company Value Counts</h5>
+                            <img src="{{ url_for('static', filename='images/company_counts.png') }}" class="img-fluid" alt="Company Value Counts">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Company vs Price</h5>
+                            <img src="{{ url_for('static', filename='images/company_price.png') }}" class="img-fluid" alt="Company vs Price">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <h5 class="card-title">TypeName Value Counts</h5>
+                            <img src="{{ url_for('static', filename='images/typename_counts.png') }}" class="img-fluid" alt="TypeName Value Counts">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <h5 class="card-title">TypeName vs Price</h5>
+                            <img src="{{ url_for('static', filename='images/typename_price.png') }}" class="img-fluid" alt="TypeName vs Price">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Touchscreen Value Counts</h5>
+                            <img src="{{ url_for('static', filename='images/touchscreen_counts.png') }}" class="img-fluid" alt="Touchscreen Value Counts">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Touchscreen vs Price</h5>
+                            <img src="{{ url_for('static', filename='images/touchscreen_price.png') }}" class="img-fluid" alt="Touchscreen vs Price">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Ips Value Counts</h5>
+                            <img src="{{ url_for('static', filename='images/ips_counts.png') }}" class="img-fluid" alt="Ips Value Counts">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Ips vs Price</h5>
+                            <img src="{{ url_for('static', filename='images/ips_price.png') }}" class="img-fluid" alt="Ips vs Price">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Cpu Brand Value Counts</h5>
+                            <img src="{{ url_for('static', filename='images/cpu_brand_counts.png') }}" class="img-fluid" alt="Cpu Brand Value Counts">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Cpu Brand vs Price</h5>
+                            <img src="{{ url_for('static', filename='images/cpu_brand_price.png') }}" class="img-fluid" alt="Cpu Brand vs Price">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Ram Value Counts</h5>
+                            <img src="{{ url_for('static', filename='images/ram_counts.png') }}" class="img-fluid" alt="Ram Value Counts">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Ram vs Price</h5>
+                            <img src="{{ url_for('static', filename='images/ram_price.png') }}" class="img-fluid" alt="Ram vs Price">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Gpu Brand vs Median Price</h5>
+                            <img src="{{ url_for('static', filename='images/gpu_brand_median_price.png') }}" class="img-fluid" alt="Gpu Brand vs Median Price">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Operating System vs Average Price</h5>
+                            <img src="{{ url_for('static', filename='images/os_price.png') }}" class="img-fluid" alt="Operating System vs Average Price">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer mt-5">
+                <p>&copy; Laptop Price Prediction Dashboard_ 6853 Aditya - All Rights Reserved</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="\static\css\result.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Prediction Result</h1>
+        <div class="result mt-4">
+            <h1>The Predicted Price of the laptop is: ₹{{ price }}</h1>
+            <br>
+            <br>
+            <br>
+            <p>Would you like to discuss similar projects or get in touch with me?</p>
+            <form action="{{ url_for('contact_me') }}" method="POST">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact_number">Contact Number:</label>
+                    <div class="input-group">
+                        <select class="custom-select" id="country_code" name="country_code">
+                            <option value="+91">+91 (India)</option>
+                            <option value="+1">+1 (USA)</option>
+                            <option value="+44">+44 (UK)</option>
+                            <option value="+61">+61 (Australia)</option>
+                            <option value="+81">+81 (Japan)</option>
+                            <option value="+49">+49 (Germany)</option>
+                            <option value="+33">+33 (France)</option>
+                            <option value="+39">+39 (Italy)</option>
+                            <option value="+34">+34 (Spain)</option>
+                            <option value="+86">+86 (China)</option>
+                        </select>
+                        <input type="text" class="form-control" id="contact_number" name="contact_number" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Additional Message:</label>
+                    <textarea class="form-control" id="message" name="message" rows="3"></textarea>
+                </div>
+                <div class="d-flex mt-3">
+                    <a href="/" class="btn btn-secondary mr-2">Go Back</a>
+                    <button class="btn btn-danger mr-2" onclick="window.location.href='/logout'">Logout</button>
+                    <button type="submit" class="btn btn-custom">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

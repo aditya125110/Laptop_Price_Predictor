@@ -1,0 +1,8 @@
+.btn-custom {
+    background-color: #28a745; /* Custom green color */
+    color: white; /* Text color */
+}
+.btn-logout {
+    background-color: #dc3545; /* Bootstrap danger color for logout */
+    color: white; /* Text color */
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Admin</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="\static\css\welcome_admin.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Admin Menu</h2>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" href="/welcome_admin">
+                    <i class="fas fa-paper-plane"></i> Inquiries
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="/dashboard">
+                    <i class="fas fa-chart-line"></i> Insights
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/view_users">
+                    <i class="fas fa-users"></i> View Users
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin_logout">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="container">
+            <div class="header">
+                <h1>Hi, {{ name }}</h1>
+                <h2>Welcome to the Admin Dashboard</h2>
+            </div>
+            <p class="welcome-message"></p>
+            <div class="row">
+                {% for submission in contact_submissions %}
+                <div class="col-md-4 submission-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ submission['name'] }}</h5>
+                            <p class="card-text"><strong>Country Code:</strong> {{ submission['country_code'] }}</p>
+                            <p class="card-text"><strong>Contact Number:</strong> {{ submission['contact_number'] }}</p>
+                            <p class="card-text"><strong>Email:</strong> {{ submission['email'] }}</p>
+                            <p class="card-text"><strong>Message:</strong> {{ submission['message'] }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

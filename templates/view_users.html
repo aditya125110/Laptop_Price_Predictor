@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Users</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="\static\css\view_users.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Admin Menu</h2>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" href="/welcome_admin">
+                    <i class="fas fa-paper-plane"></i> Inquiries
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="/dashboard">
+                    <i class="fas fa-chart-line"></i> Insights
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/view_users">
+                    <i class="fas fa-users"></i> View Users
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin_logout">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="container">
+            <div class="header">
+                <h1>Registered Users Overview</h1>
+            </div>
+            <div class="user-table">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Username</th>
+                            <th>Registration Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for user in users %}
+                        <tr>
+                            <td>{{ user['id'] }}</td>
+                            <td>{{ user['username'] }}</td>
+                            <td>{{ user['registration_time'] }}</td>
+                            <td>
+                                <form action="{{ url_for('delete_user', user_id=user['id']) }}" method="post" style="display:inline;" onsubmit="return confirm('Are you sure you want to delete this user?');">
+                                    <button type="submit" class="btn btn-link p-0" title="Delete">
+                                        <i class="fas fa-trash-alt text-danger"></i>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
